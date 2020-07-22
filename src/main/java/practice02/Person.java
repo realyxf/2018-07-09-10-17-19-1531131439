@@ -18,8 +18,6 @@ public class Person {
     }
 
     public String introduce() {
-        String introduceModel="My name is " + this.name +
-                ". I am " + this.age + " years old.";
-        return introduceModel;
+        return "My name is " + getName() + ". I am " + getAge() + " years old.";
     }
 }

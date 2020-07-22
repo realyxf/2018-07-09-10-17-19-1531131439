@@ -9,17 +9,15 @@ public class Person {
         this.age=age;
     }
 
-    public String introduce(){
-        String introduceModel="My name is " + this.name +
-                ". I am " + this.age + " years old.";
-        return introduceModel;
-    }
-
     public String getName() {
         return name;
     }
 
     public int getAge() {
         return age;
+    }
+
+    public String introduce(){
+        return "My name is " + getName() + ". I am " + getAge() + " years old.";
     }
 }

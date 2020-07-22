@@ -13,9 +13,7 @@ public class Student extends Person{
         return klass;
     }
 
-    //("I am a Student. I am at Class 2.");
     public String introduce() {
-        String introduceModel="I am a Student. I am at Class " + this.klass + ".";
-        return introduceModel;
+        return "I am a Student. I am at Class " + getKlass() + ".";
     }
 }
