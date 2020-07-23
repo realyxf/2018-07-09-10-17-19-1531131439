@@ -37,7 +37,9 @@ public class Klass {
     public void assignLeader(Student student) {
         if(student.getKlass().getNumber() == this.getNumber()){
             this.leader = student;
-            System.out.print("I am Tom. I know " + student.getName() +" become Leader of Class " + this.number +".\n");
+            if(getTeacher()!=null){
+                System.out.print("I am " + getTeacher().getName() + ". I know " + student.getName() +" become Leader of Class " + this.number +".\n");
+            }
         }
         else {
             System.out.print("It is not one of us.\n");
@@ -48,8 +50,12 @@ public class Klass {
         return leader;
     }
 
+    //"I am Tom. I know Jerry has joined Class 2.\n"
     public void appendMember(Student student) {
         student.getKlass().setNumber(this.number);
-        System.out.print("I am Tom. I know " + student.getName() +" has joined Class " + this.number +".\n");
+        if(getTeacher() != null ){
+            System.out.print("I am " + getTeacher().getName() + ". I know " + student.getName() +" has joined Class " + this.number +".\n");
+        }
+
     }
 }

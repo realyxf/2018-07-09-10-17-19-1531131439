@@ -3,14 +3,24 @@ package practice11;
 import java.util.LinkedList;
 
 public class Teacher extends Person{
-    private Student student;
-    private LinkedList linkedList;
-    private Klass klass;
 
-    public Teacher(int i, String name, int age, LinkedList linkedList) {
+    private LinkedList<Klass> klasses;
+
+
+    public Teacher(int i, String name, int age, LinkedList<Klass> klasses) {
         super(i, name, age);
-        this.linkedList = linkedList;
+        this.klasses = klasses;
+        initKlass(klasses);
+
+    }
+
+    public void initKlass(LinkedList<Klass> klasses){
+        if(this.klasses != null){
+            for(int klassIndex = 0; klassIndex<this.klasses.size(); klassIndex++){
+                this.klasses.get(klassIndex).setTeacher(this);
+            }
         }
+    }
 
     public Teacher(int i, String name, int age) {
         super(i, name, age);
@@ -41,7 +51,7 @@ public class Teacher extends Person{
     }
 
     public LinkedList<Klass> getClasses() {
-        return linkedList;
+        return klasses;
     }
 
     public boolean isTeaching(Student student) {
